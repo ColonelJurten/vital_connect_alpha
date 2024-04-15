@@ -22,7 +22,7 @@ class _PulseChartState extends State<PulseChart> {
   final beatPoints = <FlSpot>[];
   double _pulsaciones = 0.0;
   double x = 0.0;
-  double _step = 0.5;
+  final double _step = 0.5;
 
 ////////////Declaracion de valores para el estado de las tareas dinamicas/////
 
@@ -35,6 +35,7 @@ class _PulseChartState extends State<PulseChart> {
   @override
   void initState() {
     super.initState();
+
     pulseSu = _ref.child('pulsaciones').onValue.listen((event) {
       setState(() {
         _pulsaciones = double.parse(event.snapshot.value.toString());
@@ -53,6 +54,7 @@ class _PulseChartState extends State<PulseChart> {
 
 /////////////Creando el widget de la tabla dinámica///////////////
 
+  @override
   Widget build(BuildContext context) {
     return beatPoints.isNotEmpty
         ? Column(

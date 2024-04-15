@@ -22,7 +22,7 @@ class _TempChartState extends State<TempChart> {
   final tempPoints = <FlSpot>[];
   double _temperature = 0.0;
   double x = 0.0;
-  double _step = 0.5;
+  final double _step = 0.5;
 
 ////////////Declaracion de valores para el estado de las tareas dinamicas/////
 
@@ -53,6 +53,7 @@ class _TempChartState extends State<TempChart> {
 
 /////////////Creando el widget de la tabla dinámica///////////////
 
+  @override
   Widget build(BuildContext context) {
     return tempPoints.isNotEmpty
         ? Column(
@@ -92,7 +93,7 @@ class _TempChartState extends State<TempChart> {
                             sideTitles: SideTitles(showTitles: false)),
                       ))),
                 ),
-              )
+              ),
             ],
           )
         : Container();
@@ -112,7 +113,6 @@ class _TempChartState extends State<TempChart> {
       isCurved: false,
     );
   }
-
 /////////////Terminar la conexión de la base de datos y el timer///////////////
 
   @override

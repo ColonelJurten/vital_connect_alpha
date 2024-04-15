@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vital_connect_alpha/widget/Circle_Frec.dart';
+import 'package:vital_connect_alpha/widget/Circle_Temp.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -67,6 +69,12 @@ class HomePage extends StatelessWidget {
               },
             ),
           ],
+        ),
+      ),
+      body: Container(
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [CircleSliderPulse(), CircleSliderTemp()],
         ),
       ),
     );
